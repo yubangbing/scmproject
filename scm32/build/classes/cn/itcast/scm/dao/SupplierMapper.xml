@@ -27,6 +27,14 @@
 		values
 		(#{supId},#{supName},#{supLinkman},#{supPhone},#{supAddress},#{supRemark},#{supType},#{supPay});
 	</insert>
+	
+	<update id="updateByPk" parameterType="supplier">
+		update supplier set
+		sup_name=#{supName},sup_linkman=#{supLinkman},sup_phone=#{supPhone},
+		sup_address=#{supAddress},sup_remark=#{supRemark},sup_pay=#{supPay},sup_type=#{supType}
+		where
+		sup_id=#{supId}
+	</update>
 
 
 	<!-- 通过关键字单条件分页查询, 返回数据集 -->

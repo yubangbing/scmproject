@@ -18,7 +18,7 @@ public interface BaseService<T> {
     int deleteByPks(String [] pks) throws Exception;
     
     //根据对象主键修改
-    int updateByKk(T entity) throws Exception;
+    int updateByPk(T entity) throws Exception;
    //根据对象动态查询对象列表
     List<T> selectUseDyc(T entity);
     

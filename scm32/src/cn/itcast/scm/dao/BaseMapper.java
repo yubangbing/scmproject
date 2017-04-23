@@ -4,7 +4,7 @@ import java.util.List;
 
 import cn.itcast.scm.entity.Page;
 
-public interface BaseMapper<T> {
+public interface BaseMapper<T>  {
 	   //添加实体对象信息到表
 	    int insert(T entity);
 	   
@@ -18,7 +18,7 @@ public interface BaseMapper<T> {
 	    int deleteByPks(String[] pks);
 	   
 	    //根据对象主键修改
-	    int updateByKk(T entity);
+	    int updateByPk(T entity);
 	   
 	    //根据对象动态生成SQL语句
 	    List<T> selectUseDyc(T entity);

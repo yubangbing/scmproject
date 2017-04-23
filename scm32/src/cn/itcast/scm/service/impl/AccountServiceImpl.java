@@ -37,7 +37,7 @@ public class AccountServiceImpl implements AccountService<Account> {
 	}
 
 	@Override
-	public int updateByKk(Account entity) throws Exception {
+	public int updateByPk(Account entity) throws Exception {
 		// TODO Auto-generated method stub
 		return 0;
 	}

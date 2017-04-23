@@ -32,9 +32,8 @@ public class SupplierServiceImpl implements SupplierService<Supplier> {
 	}
 
 	@Override
-	public int updateByKk(Supplier entity) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
+	public int updateByPk(Supplier entity) throws Exception {
+		return suppliermapper.updateByPk(entity);
 	}
 
 	@Override

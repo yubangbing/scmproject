@@ -57,7 +57,12 @@
 					iconCls: 'icon-edit',
 					text:'修改',
 					handler: function(){
-						alert('修改按钮');
+						parent.$('#win').window({    
+						    width:600,    
+						    height:400,    
+						    modal:true,
+						    content:"<iframe src='${proPath}/base/goURL/supplier/update.action' height='100%' width='100%' frameborder='0px' ></iframe>"  
+					  });
 					}
 				},'-',{
 					iconCls: 'icon-remove',
@@ -128,8 +133,12 @@
 				title : '供应商名称',
 				width : 100
 			}, {
+				field : 'supLinkman',
+				title : '联系人',
+				width : 100
+			},	{
 				field : 'supPhone',
-				title : '供应商电话',
+				title : '联系电话',
 				width : 100
 			}, {
 				field : 'supType',
@@ -138,6 +147,10 @@
 			}, {
 				field : 'supAddress',
 				title : '地址',
+				width : 100,
+			},{
+				field : 'supRemark',
+				title : '备注',
 				width : 100,
 				align : 'right'
 			}] ]

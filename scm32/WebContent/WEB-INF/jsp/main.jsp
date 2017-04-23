@@ -11,11 +11,9 @@
 	$(function() {
 		$("a[title]").click(function() {
 			var text = this.href;
-			alert(text);
 			//判断是否存在
 			if($('#tt').tabs("exists",this.title)){
 			//存在则选中
-				alert("存在了");
 				$('#tt').tabs("select",this.title);			
 			}else{
 				$('#tt').tabs('add', {

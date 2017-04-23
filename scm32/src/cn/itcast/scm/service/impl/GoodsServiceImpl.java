@@ -32,7 +32,7 @@ public class GoodsServiceImpl implements GoodsService<Goods> {
 	}
 
 	@Override
-	public int updateByKk(Goods entity) throws Exception {
+	public int updateByPk(Goods entity) throws Exception {
 		// TODO Auto-generated method stub
 		return 0;
 	}

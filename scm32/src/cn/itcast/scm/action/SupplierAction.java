@@ -44,6 +44,21 @@ public class SupplierAction extends BaseAction{
 	      }
 	      return i;
 	   }
+	
+	//通过对象主键数组批量删除
+	@RequestMapping("/updateByPk")
+	   @ResponseBody
+	   public Object updateByPk(Supplier supplier){
+	      int i=0;
+	      try {
+	           i = supplierService.updateByPk(supplier);
+	      } catch (Exception e) {
+	          // TODO Auto-generated catch block
+	          e.printStackTrace();
+	      }
+	      return i;
+	   }
+
 
 	//通过关键字单条件（supName来查）分页查询
 	@RequestMapping("/selectPage")
