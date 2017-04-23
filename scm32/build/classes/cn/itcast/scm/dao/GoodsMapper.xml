@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.itcast.scm.dao.GoodsMapper" >
+  <resultMap id="GoodsResultMap" type="cn.itcast.scm.entity.Goods" >
+    <id column="goods_Id" property="goodsId" jdbcType="VARCHAR" />
+    <result column="goods_name" property="goodsName" jdbcType="VARCHAR" />
+    <result column="goods_unit" property="goodsUnit" jdbcType="VARCHAR" />
+    <result column="goods_type" property="goodsType" jdbcType="VARCHAR" />
+    <result column="goods_color" property="goodsColor" jdbcType="VARCHAR" />
+    <result column="goods_store" property="goodsStore" jdbcType="INTEGER" />
+    <result column="goods_limit" property="goodsLimit" jdbcType="INTEGER" />
+    <result column="goods_commission" property="goodsCommission" jdbcType="DECIMAL" />
+    <result column="goods_remark" property="goodsRemark" jdbcType="VARCHAR" />
+    <result column="goods_sel_price" property="goodsSelPrice" jdbcType="DECIMAL" />
+    <result column="goods_buy_price" property="goodsBuyPrice" jdbcType="DECIMAL" />
+    <result column="goods_producer" property="goodsProducer" jdbcType="VARCHAR" />
+  </resultMap>
+  
+  <insert id="insert" parameterType="Goods">
+		insert into goods(goods_name)
+		values(#{goodsName});
+  </insert>
+  
+	<!-- 通过关键字单条件分页查询, 返回数据集 -->
+	<select id="selectPageList" parameterType="page" resultMap="GoodsResultMap">
+		select * from goods where goods_name like #{keyWord} limit
+		#{start},#{rows}
+	</select>
+	<!-- 通过关键字单条件分页查询，返回总记录数 -->
+	<select id="selectPageCount" parameterType="page" resultType="Integer">
+		select count(1) from goods where goods_name like #{keyWord}
+	</select>
+</mapper>

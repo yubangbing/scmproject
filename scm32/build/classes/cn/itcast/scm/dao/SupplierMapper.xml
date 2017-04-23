@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.itcast.scm.dao.SupplierMapper">
+	<resultMap id="supplierResultMap" type="cn.itcast.scm.entity.Supplier">
+		<id column="sup_id" property="supId" jdbcType="INTEGER" />
+		<result column="sup_name" property="supName" jdbcType="VARCHAR" />
+		<result column="sup_linkman" property="supLinkman" jdbcType="VARCHAR" />
+		<result column="sup_phone" property="supPhone" jdbcType="VARCHAR" />
+		<result column="sup_address" property="supAddress" jdbcType="VARCHAR" />
+		<result column="sup_remark" property="supRemark" jdbcType="VARCHAR" />
+		<result column="sup_pay" property="supPay" jdbcType="DECIMAL" />
+		<result column="sup_type" property="supType" jdbcType="VARCHAR" />
+	</resultMap>
+	<!-- 返回类型int可以不写 delete from supplier where sup_id in (1,2,3,4,5) -->
+	<delete id="deleteByPks">
+		delete from supplier where sup_id in
+		<foreach collection="array" open="(" separator="," close=")"
+			item="pk">
+			#{pk}
+		</foreach>
+	</delete>
+
+
+	<insert id="insert" parameterType="supplier">
+		insert into supplier
+		(sup_id,sup_name,sup_linkman,sup_phone,sup_address,sup_remark,sup_type,sup_pay)
+		values
+		(#{supId},#{supName},#{supLinkman},#{supPhone},#{supAddress},#{supRemark},#{supType},#{supPay});
+	</insert>
+
+
+	<!-- 通过关键字单条件分页查询, 返回数据集 -->
+	<select id="selectPageList" parameterType="page" resultMap="supplierResultMap">
+		select * from supplier where sup_name like #{keyWord} limit
+		#{start},#{rows}
+	</select>
+	<!-- 通过关键字单条件分页查询，返回总记录数 -->
+	<select id="selectPageCount" parameterType="page" resultType="Integer">
+		select count(1) from supplier where sup_name like #{keyWord}
+	</select>
+
+
+	<!-- 通过多条件分页查询，返回数据集 -->
+	<select id="selectPageListUseDyc" parameterType="page"
+		resultMap="supplierResultMap">
+		select * from supplier
+		<where>
+			<if test="paramEntity.supName!=null">and sup_name like #{paramEntity.supName}</if>
+			<if test="paramEntity.supAddress!=null">and sup_address like #{paramEntity.supAddress}</if>
+		</where>
+		limit #{start},#{rows}
+	</select>
+
+	<!-- 通过多条件分页查询，返回总记录数 -->
+	<select id="selectPageCountUseDyc" parameterType="page"
+		resultType="Integer">
+		select count(1) from supplier
+		<where>
+			<if test="paramEntity.supName!=null">and sup_name like #{paramEntity.supName}</if>
+			<if test="paramEntity.supAddress!=null">and sup_address like #{paramEntity.supAddress}</if>
+		</where>
+	</select>
+</mapper>
