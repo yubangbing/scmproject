@@ -10,8 +10,8 @@ import cn.itcast.scm.entity.Page;
 import cn.itcast.scm.entity.Supplier;
 import cn.itcast.scm.service.SupplierService;
 @Service("supplierService")
-public class SupplierServiceImpl implements SupplierService<Supplier> {
-	@Autowired
+public class SupplierServiceImpl extends BaseServiceImpl<Supplier> implements SupplierService<Supplier> {
+/*	@Autowired
 	private SupplierMapper<Supplier> suppliermapper;
 	
 	@Override
@@ -61,5 +61,5 @@ public class SupplierServiceImpl implements SupplierService<Supplier> {
 	@Override
 	public int deleteByPks(String[] pks) throws Exception {
 		return suppliermapper.deleteByPks(pks);
-	}
+	}*/
 }
