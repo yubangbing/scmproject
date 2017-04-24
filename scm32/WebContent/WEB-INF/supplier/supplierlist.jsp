@@ -148,6 +148,9 @@
 				field : 'supAddress',
 				title : '地址',
 				width : 100,
+				formatter: function(value,row,index){    
+                    return '<span title='+value+'>'+value+'</span>';    
+               }
 			},{
 				field : 'supRemark',
 				title : '备注',

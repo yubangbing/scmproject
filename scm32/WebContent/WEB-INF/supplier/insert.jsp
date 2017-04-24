@@ -29,14 +29,15 @@
 			<label for="supPay">期初应付(元):</label> <input type="text" name="supPay" />
 		</div>
 		<div>
-			<label for="supType">供应商类型：</label> <%-- <select id="cc"
+			<label for="supType">供应商类型：</label> 
+			<select id="cc"
 				class="easyui-combobox" name="supType" style="width: 200px;">
 				<c:forEach items="${applicationScope.sysParam.supType}"
 					var="supType">
 					<option value="${supType.key}">${supType.value}</option>
 				</c:forEach>
-			</select> --%>
-			<input type="text" name="supType" />
+			</select>
+			<!-- <input type="text" name="supType" /> -->
 		</div>
 		<div>
 			<label for="supRemark">备注:</label>
