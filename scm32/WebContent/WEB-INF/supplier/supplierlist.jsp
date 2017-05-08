@@ -17,9 +17,9 @@
 	
 			$('#dg').datagrid({    
 			    //url:'${proPath}/datagrid_data1.json', 
-			    url:'${proPath}/supplier/selectPage.action', 
+			    //url:'${proPath}/supplier/selectPage.action', 
 			    
-			    //url:'${proPath}/supplier/selectPageUseDyc.action', 
+			    url:'${proPath}/supplier/selectPageUseDyc.action', 
 			    fitColumns:true,
 			    nowrapL:true,
 			    idField:'supId',
@@ -39,7 +39,7 @@
 						supName: '%%',
 						supAddress:'%%',
 						//keyWord用于单条件查询,这里可不写
-						keyWord:'%%'
+						//keyWord:'%%'
 					}, 
 						    
 			    toolbar: [{
@@ -116,7 +116,7 @@
 					   }
 					}
 				},'-',{
-					text:"名称：<input type='text' id='supNmae' name='supName'>",					
+					text:"名称：<input type='text' id='supName' name='supName'>",					
 				},'-',{
 					text:"地址：<input type='text' id='supAddress' name='supAddress'/>",					
 				}],		
@@ -127,15 +127,15 @@
 				}, {
 				field : 'supId',
 				title : '供应商编号',
-				width : 100
+				width : 70
 			}, {
 				field : 'supName',
 				title : '供应商名称',
-				width : 100
+				width : 70
 			}, {
 				field : 'supLinkman',
 				title : '联系人',
-				width : 100
+				width : 70
 			},	{
 				field : 'supPhone',
 				title : '联系电话',
@@ -161,13 +161,12 @@
 			
 			$('#supAddress').searchbox({ 
 				searcher:function(value,name){ 
-					
 					//执行load函数时，参数将取代'queryParams'属性中的参数
 					$('#dg').datagrid('load',{
 						supName: '%'+$('#supName').val()+'%',
 						supAddress:'%'+value+'%',
 						//用于单条件查询
-						keyWord:'%'+value+'%'
+						//keyWord:'%'+value+'%'
 					});					
 				}, 
 				prompt:'' 

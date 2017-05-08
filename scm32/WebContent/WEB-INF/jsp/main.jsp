@@ -64,7 +64,16 @@
 			</div>
 
 
-			<div title="Title3">content3</div>
+			<div title="进货管理">
+			    <ul style="list-style: none;padding: 0px;margin:0px;">
+					<li style="padding: 6px;"><a href="${proPath}/base/goURL/buyorder/insert.action" title="商品采购"
+						style="text-decoration: none;display: block;font-weight:bold;">商品采购</a>
+					</li>
+					<li style="padding: 6px;"><a href="${proPath}/base/goURL/goods/goodslist.action" title="商品退货"
+						style="text-decoration: none;display: block;font-weight:bold;">商品退货(未实现)</a>
+					</li>
+				</ul>
+			</div>
 
 		</div>
 
