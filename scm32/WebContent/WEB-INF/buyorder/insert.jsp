@@ -72,6 +72,26 @@
 					text:'提交采购',
 					handler: function(){
 						alert('提交采购');
+						var rows = $("#dg").datagrid("getRows");
+						console.info(rows);				
+						
+						//把对象转成JSON格式的字符串
+						 rows =JSON.stringify(rows);
+						 console.info(rows);
+						
+						//提交采购到服务端
+						 $('#ff').form('submit', {    
+						    url:'${proPath}/buyOrder/insert.action',    
+						    onSubmit: function(param){    
+						        param.rows = rows; 
+						        return true;   
+						         
+						    },
+						    success:function(data){  
+						    //自己处理返回的信息  
+						        alert(data);   
+						    }      
+						}); 
 					}
 			
 				}],			       
