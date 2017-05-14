@@ -165,7 +165,7 @@
 					$('#dg').datagrid('load',{
 						supName: '%'+$('#supName').val()+'%',
 						supAddress:'%'+value+'%',
-						//用于单条件查询
+						//用于单条件查询	
 						//keyWord:'%'+value+'%'
 					});					
 				}, 
