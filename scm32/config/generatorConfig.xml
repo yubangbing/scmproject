@@ -32,7 +32,7 @@
           targetProject="scm32/src" />
       <!--改动4 配置dao接口生成信息-->
       <javaClientGenerator type="XMLMAPPER" targetPackage="cn.itcast.scm.dao" targetProject="scm32/src" />
-      <table tableName="account_records" domainObjectName="AccountRecords"/>
+      <table tableName="sys_param" domainObjectName="SysParam"/>
           
       
    </context>

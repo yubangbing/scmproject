@@ -5,15 +5,15 @@
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
   
-    <servlet>
+<!--     <servlet>
       <servlet-name>SysInitServlet</servlet-name>
       <servlet-class>cn.itcast.servlets.SysInitServlet</servlet-class>
-      <load-on-startup>2</load-on-startup><!-- 1先，2优先级后，0就不加载了 -->
+      <load-on-startup>2</load-on-startup>1先，2优先级后，0就不加载了
    </servlet>
    <servlet-mapping>
       <servlet-name>SysInitServlet</servlet-name>
       <url-pattern>/servlet/SysInitServlet</url-pattern>
-   </servlet-mapping>
+   </servlet-mapping> -->
   
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>

@@ -75,7 +75,11 @@
 			}, {
 				field : 'goodsColor',
 				title : '颜色',
-				width : 100
+				width : 100,
+				formatter: function(value,row,index){
+					var str = "${applicationScope.sysParam.goodsColor}";
+					return valueToText(str,value);				
+				}
 			}, {
 				field : 'goodsSelPrice',
 				title : '售价',
