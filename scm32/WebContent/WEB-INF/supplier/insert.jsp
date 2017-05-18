@@ -70,7 +70,7 @@
 			$("#btn").click(function() {
 				$("#ff").form("enableValidation");
 				if ($("#ff").form("validate")) {
-					alert("------------");
+					//alert("------------");
 					$('#ff').form('submit', {
 						url : '${proPath}/supplier/insert.action',
 						onSubmit : function() {
@@ -78,7 +78,7 @@
 						},
 						success : function(count) {
 							//可以定义为对应消息框
-							alert(count);
+							//alert(count);
 							parent.$("#win").window("close");
 							win.$("#dg").datagrid("reload");
 						}

@@ -67,7 +67,7 @@
              text : '取销',
              handler : function() {
                 $("#ff").form("reset");
-                alert("取消");
+                //alert("取消");
              }
           } ]
       });

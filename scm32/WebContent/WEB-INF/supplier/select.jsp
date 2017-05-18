@@ -41,7 +41,7 @@
 					text:'选择供应商',
 					handler: function(){
 					var row =  $("#dg").datagrid("getSelected");
-					alert(row.supId);
+					//alert(row.supId);
 					win.$("#ff").form('load',{
 						supId:row.supId,
 						supName:row.supName
@@ -110,8 +110,8 @@
 		
 			$('#supAddress').searchbox({ 
 			searcher:function(value,name){ 
-				alert("supAddress:"+value); 
-				alert("supName:"+$('#supName').val());
+				//alert("supAddress:"+value); 
+				//alert("supName:"+$('#supName').val());
 				$('#dg').datagrid('load',{
 					supName: '%'+$('#supName').val()+'%',
 					supAddress:'%'+value+'%'		
@@ -123,7 +123,7 @@
 	/* 通过关键字查询
 		$('#ss').searchbox({ 
 			searcher:function(value,name){ 
-				alert(value + "," + name); 
+				//alert(value + "," + name); 
 				$('#dg').datagrid('load',{
 					keyWord: '%'+value+'%'					
 				});					

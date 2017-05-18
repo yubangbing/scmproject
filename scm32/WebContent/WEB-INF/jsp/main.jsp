@@ -70,7 +70,7 @@
 						style="text-decoration: none;display: block;font-weight:bold;">商品采购</a>
 					</li>
 					<li style="padding: 6px;"><a href="${proPath}/base/goURL/goods/goodslist.action" title="商品退货"
-						style="text-decoration: none;display: block;font-weight:bold;">商品退货(未实现)</a>
+						style="text-decoration: none;display: block;font-weight:bold;">商品退货(未)</a>
 					</li>
 				</ul>
 			</div>

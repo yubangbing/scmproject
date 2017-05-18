@@ -43,7 +43,7 @@
 					iconCls: 'icon-save',
 					text:'保存',
 					handler: function(){
-						alert('保存按钮');
+						//alert('保存按钮');
 						
 						var row = $("#dg").datagrid("getSelected");
 						if(row==null){
@@ -64,7 +64,7 @@
 							bodTotalPrice:$("#bodBuyPrice").val()*$("#bodAmount").val(),
 							bodImeiList:$("#bodImeiList").val()
 						});
-						alert("关闭");
+						//alert("关闭");
 						parent.$("#win").window("close");
 
 				
@@ -104,7 +104,7 @@
 	// 通过关键字查询
 		$('#goodsName').searchbox({ 
 			searcher:function(value,name){ 
-				alert(value + "," + name); 
+				//alert(value + "," + name); 
 				$('#dg').datagrid('load',{
 					keyWord: '%'+value+'%'					
 				});					

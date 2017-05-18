@@ -16,23 +16,17 @@
 		<result column="bo_id" property="boId" jdbcType="VARCHAR" />
 	</resultMap>
 	<!-- insert into account (acc_login,acc_pass) values ('admin3','admin3'),('admin4','admin4') -->
-	<insert id="insertList">
-		insert into buy_order_detail (bod_id, goods_id, goods_name,
-		goods_unit, goods_type, goods_color,
-		bod_amount, bod_buy_price, bod_total_price,
-		bo_id, bod_imei_list)
-		values
-		<foreach collection="list" item="item" separator=",">
-			(#{item.bodId,jdbcType=VARCHAR}, #{item.goodsId,jdbcType=VARCHAR},
-			#{item.goodsName,jdbcType=VARCHAR},
-			#{item.goodsUnit,jdbcType=VARCHAR},
-			#{item.goodsType,jdbcType=VARCHAR},
-			#{item.goodsColor,jdbcType=VARCHAR},
-			#{item.bodAmount,jdbcType=INTEGER},
-			#{item.bodBuyPrice,jdbcType=DECIMAL},
-			#{item.bodTotalPrice,jdbcType=DECIMAL},
-			#{item.boId,jdbcType=VARCHAR},
-			#{item.bodImeiList,jdbcType=LONGVARCHAR})
-		</foreach>
-	</insert>
+  <insert id="insertList" >  
+    insert into buy_order_detail (bod_id, goods_id, goods_name, 
+      goods_unit, goods_type, goods_color, 
+      bod_amount, bod_buy_price, bod_total_price, 
+      bo_id, bod_imei_list)
+    values
+    <foreach collection="list" item="item" separator="," >
+     (#{item.bodId,jdbcType=VARCHAR}, #{item.goodsId,jdbcType=VARCHAR}, #{item.goodsName,jdbcType=VARCHAR}, 
+      #{item.goodsUnit,jdbcType=VARCHAR}, #{item.goodsType,jdbcType=VARCHAR}, #{item.goodsColor,jdbcType=VARCHAR}, 
+      #{item.bodAmount,jdbcType=INTEGER}, #{item.bodBuyPrice,jdbcType=DECIMAL}, #{item.bodTotalPrice,jdbcType=DECIMAL}, 
+      #{item.boId,jdbcType=VARCHAR}, #{item.bodImeiList,jdbcType=LONGVARCHAR})
+      </foreach>
+  </insert>
 </mapper>
