@@ -41,7 +41,7 @@
 <body class="easyui-layout">
 	<!-- 头部 -->
 	<div data-options="region:'north',title:'欢迎使用进销存管理系统',split:true"
-		style="height:130px;">欢迎您 ：${sessionScope.account.accLogin}</div>
+		style="height:130px;">欢迎您 ：${sessionScope.accName}</div>
 	<!-- 左边导航 -->
 	<div data-options="region:'west',title:'导航菜单',split:true"
 		style="width:150px;">
@@ -86,7 +86,12 @@
 		style="padding:5px;background:#eee;">
 		<div id="tt" class="easyui-tabs" data-options="fit:true"
 			style="width:500px;height:250px;">
-			<div title="系统介绍" style="padding:20px;">这里可以写系统或公司的相关介绍等等 </div>
+			<div title="系统介绍" style="padding:20px;">
+				<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;此系统实现了一个简单的进销存系统网站，包括用户模块、基础数据录入模块、进货管理模块
+				，<br>在供应商管理界面中，包括对供应商数据的分页显示、联合查询、增删改，供应商类型使用系统参数<br>来显示给用户。
+				商品管理界面功能与供应商界面功能相同。商品采购界面可以填写采购信息概要，选<br>择商品明细，
+				点击提交采购时，将采购概要，采购明细存入MySql数据库，并且财务表获取其中的价<br>格信息。</h3>
+			</div>
 
 		</div>
 

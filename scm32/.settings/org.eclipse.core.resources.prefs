@@ -1,2 +1,7 @@
 eclipse.preferences.version=1
+encoding//WebContent/css/login.css=UTF-8
 encoding//WebContent/css/mycss.css=UTF-8
+encoding//WebContent/css/register.css=UTF-8
+encoding//src/cn/itcast/scm/service/SmsSenderService.java=UTF-8
+encoding//src/cn/itcast/scm/service/impl/SmsSenderServiceImpl.java=UTF-8
+encoding//src/cn/itcast/scm/sms/RandomUtil.java=UTF-8

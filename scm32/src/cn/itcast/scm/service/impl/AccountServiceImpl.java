@@ -65,6 +65,9 @@ public class AccountServiceImpl implements AccountService<Account> {
 		// TODO Auto-generated method stub
 		return 0;
 	}
-
+	@Override
+	public Account selectByAccLogin(String accLogin){
+		return accountmapper.selectByAccLogin(accLogin);
+	}
 
 }

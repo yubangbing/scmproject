@@ -8,11 +8,14 @@
     <result column="acc_pass" property="accPass" jdbcType="VARCHAR" />
   </resultMap>
 	<insert id="insert" parameterType="cn.itcast.scm.entity.Account">
-      insert into account(acc_login) values(#{accLogin});
+      insert into account(acc_login,acc_name,acc_pass) values(#{accLogin},#{accName},#{accPass});
    </insert>
    
    <select id="selectUseDyc" parameterType="cn.itcast.scm.entity.Account" resultMap="accountResultMap">
-        select * from account where acc_login=#{accLogin} and acc_pass=#{accPass}
+        select * from account where acc_login=#{accLogin}
   </select>
    
+   <select id="selectByAccLogin" parameterType="String" resultMap="accountResultMap">
+        select * from account where acc_login=#{accLogin}
+  </select>
 </mapper>
